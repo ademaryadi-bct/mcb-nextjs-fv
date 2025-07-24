@@ -56,7 +56,8 @@ const layananData = [
   },
   {
     title: 'Collection Management System',
-    href: '/collection-management-system'
+    href: 'https://iha.kemenbud.go.id',
+    external: true
   },
   {
     title: 'Layanan Konservasi',
@@ -263,13 +264,15 @@ const TentangKami = props => {
             pathname === '/front-pages/visi-misi' ||
             pathname === '/front-pages/layanan-ticket-museum' ||
             pathname === '/front-pages/layanan-ticket-event' ||
-            pathname === '/front-pages/collection-management-system' ||
+            pathname.startsWith('/front-pages/layanan-ticket-event/') ||
             pathname === '/front-pages/layanan-konservasi' ||
             pathname === '/front-pages/volunteer' ||
             pathname === '/front-pages/shop' ||
+            pathname === '/front-pages/shop/category' ||
             pathname === '/front-pages/hubungi-kami' ||
             pathname === '/front-pages/peraturan' ||
-            pathname === '/front-pages/sop'
+            pathname === '/front-pages/sop' ||
+            pathname.startsWith('/front-pages/shop/category')
         })}
         {...(isBelowLgScreen
           ? {
@@ -332,19 +335,33 @@ const TentangKami = props => {
             </CustomAvatar>
             <Typography variant='h6'>Layanan</Typography>
           </div>
-          {layananData.map((page, index) => (
-            <Link
-              key={index}
-              href={'/front-pages' + page.href}
-              className={classnames('flex items-center gap-3 focus:outline-none hover:text-primary', {
-                'text-primary': pathname.includes('/front-pages' + page.href)
-              })}
-              onClick={handleLinkClick}
-            >
-              <i className='tabler-circle text-[10px]' />
-              <span>{page.title}</span>
-            </Link>
-          ))}
+          {layananData.map((page, index) =>
+            page.external ? (
+              <Link
+                key={index}
+                href={page.href}
+                target='_blank'
+                passHref={true}
+                className='flex items-center gap-3 focus:outline-none hover:text-primary'
+                onClick={handleLinkClick}
+              >
+                <i className='tabler-circle text-[10px]' />
+                <span>{page.title}</span>
+              </Link>
+            ) : (
+              <Link
+                key={index}
+                href={'/front-pages' + page.href}
+                className={classnames('flex items-center gap-3 focus:outline-none hover:text-primary', {
+                  'text-primary': pathname.includes('/front-pages' + page.href)
+                })}
+                onClick={handleLinkClick}
+              >
+                <i className='tabler-circle text-[10px]' />
+                <span>{page.title}</span>
+              </Link>
+            )
+          )}
         </div>
         <div className='flex flex-col gap-4 '>
           <div className='flex gap-3 items-center'>

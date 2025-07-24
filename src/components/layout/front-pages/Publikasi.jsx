@@ -36,7 +36,8 @@ const publicationData = [
   },
   {
     title: 'Realisasi Anggaran',
-    href: '/realisasi-anggaran'
+    href: 'https://business-iha.kemenbud.go.id',
+    external: true
   }
 ]
 
@@ -196,19 +197,33 @@ const Publikasi = props => {
         styles={styles}
       >
         <div className='flex flex-col gap-4'>
-          {publicationData.map((page, index) => (
-            <Link
-              key={index}
-              href={'/front-pages' + page.href}
-              className={classnames('flex items-center gap-3 focus:outline-none hover:text-primary', {
-                'text-primary': pathname.includes('/front-pages' + page.href)
-              })}
-              onClick={handleLinkClick}
-            >
-              <i className='tabler-circle text-[10px]' />
-              <span>{page.title}</span>
-            </Link>
-          ))}
+          {publicationData.map((page, index) =>
+            page.external ? (
+              <Link
+                key={index}
+                href={page.href}
+                target='_blank'
+                passHref={true}
+                className='flex items-center gap-3 focus:outline-none hover:text-primary'
+                onClick={handleLinkClick}
+              >
+                <i className='tabler-circle text-[10px]' />
+                <span>{page.title}</span>
+              </Link>
+            ) : (
+              <Link
+                key={index}
+                href={'/front-pages' + page.href}
+                className={classnames('flex items-center gap-3 focus:outline-none hover:text-primary', {
+                  'text-primary': pathname.includes('/front-pages' + page.href)
+                })}
+                onClick={handleLinkClick}
+              >
+                <i className='tabler-circle text-[10px]' />
+                <span>{page.title}</span>
+              </Link>
+            )
+          )}
         </div>
       </MenuWrapper>
     </Tag>

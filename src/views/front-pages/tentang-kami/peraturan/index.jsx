@@ -1,10 +1,13 @@
-import ComingSoon from '@/views/ComingSoon'
+'use client'
 
-const PeraturanWrapper = () => {
+import ContactUs from '../../landing-page/ContactUs'
+import HeroSection from '../../landing-page/HeroSection'
+
+const PeraturanWrapper = ({ slides }) => {
   return (
     <div>
-      <h1 className='text-3xl font-bold text-center'>Peraturan</h1>
-      <ComingSoon />
+      <HeroSection slides={slides} />
+      <ContactUs />
     </div>
   )
 }

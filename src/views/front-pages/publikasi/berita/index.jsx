@@ -1,15 +1,13 @@
 'use client'
-import ComingSoon from '@/views/ComingSoon'
-import HeroSection from './HeroSection'
-import { NewsCard } from './NewsCard'
 import { SearchSection } from './SearchSection'
 import { NewsList } from './NewsList'
 import ContactUs from '../../landing-page/ContactUs'
+import HeroSection from '../../landing-page/HeroSection'
 
-const BeritaWrapper = () => {
+const BeritaWrapper = ({ slides }) => {
   return (
     <div className='bg-backgroundPaper'>
-      <HeroSection />
+      <HeroSection slides={slides} />
       <main>
         <SearchSection />
         <NewsList />

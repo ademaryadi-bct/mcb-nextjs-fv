@@ -1,10 +1,13 @@
 'use client'
-import HeroSection from './HeroSection'
 
-const PpidWrapper = () => {
+import ContactUs from '../landing-page/ContactUs'
+import HeroSection from '../landing-page/HeroSection'
+
+const PpidWrapper = ({ slides }) => {
   return (
     <div className='bg-backgroundPaper'>
-      <HeroSection />
+      <HeroSection slides={slides} />
+      <ContactUs />
     </div>
   )
 }

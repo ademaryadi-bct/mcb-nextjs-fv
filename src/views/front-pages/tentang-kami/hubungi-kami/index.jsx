@@ -1,11 +1,11 @@
 'use client'
 import ContactUs from '../../landing-page/ContactUs'
-import HeroContactUs from './HeroContactUs'
+import HeroSection from '../../landing-page/HeroSection'
 
-const HubungiKamiWrapper = () => {
+const HubungiKamiWrapper = ({ slides }) => {
   return (
     <div className='bg-backgroundPaper'>
-      <HeroContactUs />
+      <HeroSection slides={slides} />
       <ContactUs />
     </div>
   )
