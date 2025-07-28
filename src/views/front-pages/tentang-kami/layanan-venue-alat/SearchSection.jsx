@@ -18,7 +18,7 @@ const SearchSection = () => {
       >
         <div className='flex justify-between w-full px-5'>
           <label htmlFor='search-input' className='sr-only'>
-            Cari Event
+            Cari Layanan
           </label>
           <input
             id='search-input'

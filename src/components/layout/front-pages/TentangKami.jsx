@@ -62,6 +62,10 @@ const layananData = [
   {
     title: 'Layanan Konservasi',
     href: '/layanan-konservasi'
+  },
+  {
+    title: 'Layanan Penyewaan Venue dan Alat',
+    href: '/layanan-venue-alat'
   }
 ]
 
@@ -266,6 +270,7 @@ const TentangKami = props => {
             pathname === '/front-pages/layanan-ticket-event' ||
             pathname.startsWith('/front-pages/layanan-ticket-event/') ||
             pathname === '/front-pages/layanan-konservasi' ||
+            pathname === '/front-pages/layanan-venue-alat' ||
             pathname === '/front-pages/volunteer' ||
             pathname === '/front-pages/shop' ||
             pathname === '/front-pages/shop/category' ||

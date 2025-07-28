@@ -1,10 +1,18 @@
-import ComingSoon from '@/views/ComingSoon'
+'use client'
+import ContactUs from '../../landing-page/ContactUs'
+import HeroSection from '../../landing-page/HeroSection'
+import FilterSection from './FilterSection'
+import ReportsList from './ReportList'
+import SearchSection from './SearchSection'
 
-const RealisasiAnggaranWrapper = () => {
+const RealisasiAnggaranWrapper = ({ slides }) => {
   return (
     <div className='bg-backgroundPaper'>
-      <h1 className='text-3xl font-bold text-center'>Realisasi Anggaran</h1>
-      <ComingSoon />
+      <HeroSection slides={slides} />
+      <SearchSection />
+      <FilterSection />
+      <ReportsList />
+      <ContactUs />
     </div>
   )
 }

@@ -123,7 +123,7 @@ const EventGrid = () => {
       <div className='mt-5 max-md:max-w-full max-md:mr-[3px] max-md:mt-10'>
         <div className='grid grid-cols-3 gap-5 max-md:flex-col max-md:items-stretch max-md:grid-cols-2'>
           {events.map(event => (
-            <div key={event.id} className='w-[33%]x max-md:w-full max-md:ml-0'>
+            <div key={event.id} className='max-md:w-full max-md:ml-0'>
               <EventCard {...event} />
             </div>
           ))}
