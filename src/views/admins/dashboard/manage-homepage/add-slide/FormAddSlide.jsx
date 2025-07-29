@@ -1,12 +1,18 @@
 'use client'
+import { useEffect, useState } from 'react'
+
+import { useRouter } from 'next/navigation'
 
 import Grid from '@mui/material/Grid2'
-import { Box, TextField, Typography, Select, MenuItem, Button, FormControl, InputLabel } from '@mui/material'
-import CustomTextField from '@core/components/mui/TextField'
-import FileUploaderMultiple from '@/components/upload/MultipleUpload'
+
 import { useTheme } from '@mui/material/styles'
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+
+import { Box, TextField, Typography, Select, MenuItem, Button, FormControl, InputLabel } from '@mui/material'
+
+import CustomTextField from '@core/components/mui/TextField'
+
+import FileUploaderMultiple from '@/components/upload/MultipleUpload'
+
 import OpenDialogOnElementClick from '@/components/dialogs/OpenDialogOnElementClick'
 import ConfirmDialog from '@/components/dialogs/add-user'
 
@@ -19,6 +25,7 @@ export default function SlideShowForm() {
   })
 
   const statuses = ['Active', 'Inactive']
+
   const handleChange = prop => event => {
     setForm({ ...form, [prop]: event.target.value })
   }
@@ -44,6 +51,7 @@ export default function SlideShowForm() {
   }
 
   const router = useRouter()
+  
   const handleCancel = () => {
     router.push('/admins/dashboard')
   }

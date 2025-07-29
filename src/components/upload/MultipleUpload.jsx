@@ -23,7 +23,9 @@ const FileUploaderMultiple = ({ onFilesChange }) => {
   useEffect(() => {
     if (onFilesChange) onFilesChange(files)
   }, [files])
+
   // Hooks
+
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: acceptedFiles => {
       setFiles(prevFiles => [...prevFiles, ...acceptedFiles.map(file => Object.assign(file))])
@@ -47,7 +49,8 @@ const FileUploaderMultiple = ({ onFilesChange }) => {
         />
       )
     }
-    return <InsertDriveFile color='action' style={{ fontSize: 40 }} />
+
+    return <renderFilePreview color='action' style={{ fontSize: 40 }} />
   }
 
   const handleRemoveFile = file => {
@@ -110,13 +113,13 @@ const FileUploaderMultiple = ({ onFilesChange }) => {
             <Typography variant='h4' className='mbe-2.5'>
               Drop files here or click to upload.
             </Typography>
-            <Typography>
+            {/* <Typography>
               Drop files here or click{' '}
               <a href='/' onClick={e => e.preventDefault()} className='text-textPrimary no-underline'>
                 browse
               </a>{' '}
               thorough your machine
-            </Typography>
+            </Typography> */}
           </div>
         </div>
       </Box>

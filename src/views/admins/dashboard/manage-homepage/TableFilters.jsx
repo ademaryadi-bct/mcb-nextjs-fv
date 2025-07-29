@@ -7,11 +7,13 @@ import Grid from '@mui/material/Grid2'
 import MenuItem from '@mui/material/MenuItem'
 import { useTheme } from '@mui/material/styles'
 import { Typography } from '@mui/material'
+
 // Component Imports
 import CustomTextField from '@core/components/mui/TextField'
 
 const TableFilters = ({ setData, tableData }) => {
   const theme = useTheme()
+
   // States
   const [role, setRole] = useState('')
   const [plan, setPlan] = useState('')
@@ -25,6 +27,7 @@ const TableFilters = ({ setData, tableData }) => {
       console.log(user.fullName.toLocaleLowerCase(), search.toLocaleLowerCase())
       if (status && user.status !== status.toLocaleLowerCase()) return false
       if (!user.fullName.toLocaleLowerCase().includes(search.toLocaleLowerCase())) return false
+
       // if (globalFilter && user.globalFilter )
 
       return true

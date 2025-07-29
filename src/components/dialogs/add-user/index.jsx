@@ -1,7 +1,7 @@
 'use client'
+import { useState, useEffect } from 'react'
 
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography } from '@mui/material'
-import { useState, useEffect } from 'react'
 
 const ConfirmDialog = ({ open, setOpen, title, description, onConfirm }) => {
   const [loading, setLoading] = useState(false)

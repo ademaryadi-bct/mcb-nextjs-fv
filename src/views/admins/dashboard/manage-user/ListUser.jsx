@@ -5,6 +5,8 @@ import { useEffect, useState, useMemo } from 'react'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 
+import { useRouter } from 'next/navigation'
+
 // MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -34,6 +36,9 @@ import {
 } from '@tanstack/react-table'
 
 // Component Imports
+
+import { PrismaClient, Prisma } from '@prisma/client'
+
 import TableFilters from './TableFilters'
 import AddUserDrawer from './AddUserDrawer'
 import OptionMenu from '@core/components/option-menu'
@@ -47,8 +52,9 @@ import { getLocalizedUrl } from '@/utils/i18n'
 
 // Style Imports
 import tableStyles from '@core/styles/table.module.css'
-import { PrismaClient, Prisma } from '@prisma/client'
-import { useRouter } from 'next/navigation'
+
+
+
 
 // Styled Components
 const Icon = styled('i')({})
@@ -65,6 +71,7 @@ const fuzzyFilter = (row, columnId, value, addMeta) => {
   // Return if the item should be filtered in/out
   return itemRank.passed
 }
+
 const prisma = new PrismaClient()
 
 const DebouncedInput = ({ value: initialValue, onChange, debounce = 500, ...props }) => {
@@ -103,6 +110,7 @@ const userStatusObj = {
 
 // Column Definitions
 const columnHelper = createColumnHelper()
+
 const ListUser = ({ tableData }) => {
   // States
   const [addUserOpen, setAddUserOpen] = useState(false)
@@ -130,9 +138,12 @@ const ListUser = ({ tableData }) => {
     // console.log('LOG 2', data)
 
     setData(tableData)
+
     // setTotalCount(data)
   }
+  
   // Hooks
+
   const { lang: locale } = useParams()
 
   useEffect(() => {

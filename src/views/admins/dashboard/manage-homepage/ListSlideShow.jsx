@@ -102,6 +102,7 @@ const userStatusObj = {
 
 // Column Definitions
 const columnHelper = createColumnHelper()
+
 const ListSlideShow = ({ tableData }) => {
   // States
   const [addUserOpen, setAddUserOpen] = useState(false)
@@ -129,8 +130,11 @@ const ListSlideShow = ({ tableData }) => {
     // console.log('LOG 2', data)
 
     setData(tableData)
+
     // setTotalCount(data)
+
   }
+  
   // Hooks
   const { lang: locale } = useParams()
 

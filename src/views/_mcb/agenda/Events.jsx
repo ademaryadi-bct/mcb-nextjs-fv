@@ -39,7 +39,6 @@ export const Events = () => {
       description:
         'Dalam rangka memperingati Hari Disabilitas Internasional pada 3 Desember, Museum Nasional Indonesia (MNI) dengan bangga meluncurkan Kampanye Pekan Inklusivitas yang akan berlangsung dari tanggal 5 hingga 7 Desember 2024. Inisiatif ini menjadi wujud komitmen Museum dalam menciptakan aksesibilitas dan inklusivitas bagi seluruh pengunjung, sesuai dengan misi untuk memberikan pengetahuan dan pengalaman budaya tanpa terkecuali.'
     },
-
     {
       id: 4,
       title: 'Pesona Keris Nusantara',
