@@ -1,10 +1,15 @@
-import ComingSoon from '@/views/ComingSoon'
+'use client'
 
-const ShopWrapper = () => {
+import ContactUs from '../../landing-page/ContactUs'
+import HeroSection from '../../landing-page/HeroSection'
+import FrontShop from './FrontShop'
+
+const ShopWrapper = ({ slides }) => {
   return (
     <div className='bg-backgroundPaper'>
-      <h1 className='text-3xl font-bold text-center'>MCB Shop</h1>
-      <ComingSoon />
+      <HeroSection slides={slides} />
+      <FrontShop />
+      <ContactUs />
     </div>
   )
 }

@@ -17,24 +17,23 @@ export const SearchSection = () => {
         onSubmit={handleSearch}
         className='bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.25)] flex gap-5 text-black font-normal text-center leading-none flex-wrap justify-between px-5 py-5 rounded-[40px] max-md:max-w-full max-md:px-5'
       >
-        <label htmlFor='search-input' className='sr-only'>
-          Cari Judul Berita, Sub Judul atau Artikel
-        </label>
-        <input
-          id='search-input'
-          type='text'
-          value={searchQuery}
-          onChange={e => setSearchQuery(e.target.value)}
-          placeholder='Cari Judul Berita, Sub Judul atau Artikel'
-          className='max-md:max-w-full bg-transparent outline-none placeholder-black'
-        />
-        <button type='submit' aria-label='Search'>
-          <img
-            src='/images/front-pages/publikasi/berita/magnify.svg'
-            alt=''
-            className='aspect-[1] object-contain w-10 shrink-0'
+        <div className='flex justify-between w-full px-5'>
+          <input
+            id='search-input'
+            type='text'
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+            placeholder='Cari Judul Berita, Sub Judul atau Artikel'
+            className='w-full bg-transparent text-xl outline-none placeholder-black max-md:max-w-full'
           />
-        </button>
+          <button type='submit' aria-label='Search'>
+            <img
+              src='/images/front-pages/publikasi/berita/magnify.svg'
+              alt=''
+              className='aspect-[1] object-contain w-10 shrink-0'
+            />
+          </button>
+        </div>
       </form>
 
       <div className='max-w-full ml-3.5x mt-5 max-md:mt-5'>
@@ -44,12 +43,12 @@ export const SearchSection = () => {
               <img
                 src='/images/front-pages/publikasi/berita/filter.svg'
                 alt=''
-                className='aspect-[1] object-contain w-10 shrink-0 my-auto'
+                className='aspect-[1] object-contain w-7 shrink-0 my-auto'
               />
               <select
                 value={selectedYear}
                 onChange={e => setSelectedYear(e.target.value)}
-                className='grow shrink w-[376px] basis-auto bg-transparent outline-none'
+                className='grow shrink text-xl basis-auto bg-transparent outline-none'
               >
                 <option value='Semua Tahun'>Semua Tahun</option>
                 <option value='2024'>2024</option>
@@ -63,12 +62,12 @@ export const SearchSection = () => {
               <img
                 src='/images/front-pages/publikasi/berita/filter.svg'
                 alt=''
-                className='aspect-[1] object-contain w-10 shrink-0 my-auto'
+                className='aspect-[1] object-contain w-7 shrink-0 my-auto'
               />
               <select
                 value={selectedMedia}
                 onChange={e => setSelectedMedia(e.target.value)}
-                className='grow shrink w-[377px] basis-auto bg-transparent outline-none'
+                className='grow shrink text-xl basis-auto bg-transparent outline-none'
               >
                 <option value='Semua Media'>Semua Media</option>
                 <option value='Online'>Online</option>

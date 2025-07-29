@@ -1,10 +1,13 @@
-import ComingSoon from '@/views/ComingSoon'
+'use client'
 
-const SopWrapper = () => {
+import ContactUs from '../../landing-page/ContactUs'
+import HeroSection from '../../landing-page/HeroSection'
+
+const SopWrapper = ({ slides }) => {
   return (
     <div className='bg-backgroundPaper'>
-      <h1 className='text-3xl font-bold text-center'>SOP</h1>
-      <ComingSoon />
+      <HeroSection slides={slides} />
+      <ContactUs />
     </div>
   )
 }

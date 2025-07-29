@@ -1,10 +1,16 @@
-import ComingSoon from '@/views/ComingSoon'
+'use client'
+import ContactUs from '../../landing-page/ContactUs'
+import HeroSection from '../../landing-page/HeroSection'
+import EventGrid from './EventGrid'
+import SearchSection from './SearchSection'
 
-const LayananTicketEventWrapper = () => {
+const LayananTicketEventWrapper = ({ slides }) => {
   return (
     <div>
-      <h1 className='text-3xl font-bold text-center'>Layanan Ticket Event</h1>
-      <ComingSoon />
+      <HeroSection slides={slides} />
+      <SearchSection />
+      <EventGrid />
+      <ContactUs />
     </div>
   )
 }
