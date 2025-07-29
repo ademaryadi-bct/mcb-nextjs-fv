@@ -36,8 +36,8 @@ const publicationData = [
   },
   {
     title: 'Realisasi Anggaran',
-    href: 'https://business-iha.kemenbud.go.id',
-    external: true
+    href: '/realisasi-anggaran',
+    external: false
   }
 ]
 
