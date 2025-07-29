@@ -65,6 +65,7 @@ export default function Layout({ children }) {
   useEffect(() => {
     // Auto-expand parent menu if child is active
     const expandedMenus = {}
+
     menuItems.forEach(item => {
       if (item.children) {
         item.children.forEach(child => {
